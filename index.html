@@ -1,1 +1,169 @@
 
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PROFIT | Advertising & Marketing</title>
+  <meta name="description" content="PROFIT للدعاية والإعلان والتسويق وصناعة المحتوى.">
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0b0d10;
+      color: #fff;
+      line-height: 1.8;
+    }
+    header {
+      padding: 22px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #252a30;
+    }
+    .logo { font-size: 28px; font-weight: 900; }
+    .logo span, .green { color: #24d17e; }
+    nav a {
+      color: #ddd;
+      text-decoration: none;
+      margin-right: 18px;
+    }
+    .hero {
+      min-height: 75vh;
+      padding: 90px 8%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: radial-gradient(ellipse at top left, #123c2a, #0b0d10 60%);
+    }
+    .tag {
+      color: #24d17e;
+      font-weight: bold;
+    }
+    h1 {
+      font-size: clamp(38px, 7vw, 76px);
+      line-height: 1.2;
+      margin: 15px 0;
+      max-width: 800px;
+    }
+    .hero p {
+      color: #b7bec6;
+      max-width: 600px;
+      font-size: 18px;
+    }
+    .btn {
+      display: inline-block;
+      background: #24d17e;
+      color: #07130c;
+      text-decoration: none;
+      padding: 12px 25px;
+      border-radius: 7px;
+      font-weight: bold;
+      margin-top: 20px;
+      width: fit-content;
+    }
+    section { padding: 65px 8%; }
+    h2 { font-size: 32px; margin-bottom: 10px; }
+    .muted { color: #aeb5bd; }
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+      margin-top: 30px;
+    }
+    .service {
+      background: #14181d;
+      border: 1px solid #252c33;
+      padding: 25px;
+      border-radius: 12px;
+    }
+    .service h3 { color: #24d17e; }
+    .contact {
+      background: #11171a;
+      text-align: center;
+    }
+    footer {
+      text-align: center;
+      padding: 25px;
+      color: #939ba4;
+      border-top: 1px solid #252a30;
+    }
+    @media (max-width: 600px) {
+      header { padding: 16px 5%; }
+      nav a { margin-right: 8px; font-size: 13px; }
+      .hero { padding: 70px 6%; }
+      section { padding: 50px 6%; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">PRO<span>FIT</span></div>
+  <nav>
+    <a href="#services">خدماتنا</a>
+    <a href="#about">عن الشركة</a>
+    <a href="#contact">تواصل معنا</a>
+  </nav>
+</header>
+
+<main>
+  <div class="hero">
+    <div class="tag">PROFIT — ADVERTISING & MARKETING</div>
+    <h1>خلي علامتك التجارية<br>تسبق <span class="green">المنافسين.</span></h1>
+    <p>
+      بنساعد الشركات وأصحاب المشاريع يوصلوا لعملائهم
+      من خلال الدعاية والإعلان، وصناعة المحتوى، والتسويق.
+    </p>
+    <a class="btn" href="#contact">خلينا نتكلم عن مشروعك</a>
+  </div>
+
+  <section id="services">
+    <div class="tag">WHAT WE DO</div>
+    <h2>خدماتنا</h2>
+    <p class="muted">حلول إعلانية تساعد مشروعك يظهر بصورة احترافية.</p>
+
+    <div class="services">
+      <article class="service">
+        <h3>الهوية البصرية</h3>
+        <p class="muted">تصميم الشعارات والعناصر البصرية لعلامتك التجارية.</p>
+      </article>
+      <article class="service">
+        <h3>إدارة السوشيال ميديا</h3>
+        <p class="muted">تنظيم المحتوى وتحسين حضور مشروعك على المنصات.</p>
+      </article>
+      <article class="service">
+        <h3>صناعة المحتوى</h3>
+        <p class="muted">أفكار وسيناريوهات وتصوير ومونتاج الفيديوهات.</p>
+      </article>
+      <article class="service">
+        <h3>الدعاية والإعلان</h3>
+        <p class="muted">مواد دعائية وحملات إعلانية تناسب أهداف نشاطك.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="tag">ABOUT PROFIT</div>
+    <h2>إحنا بنفكر في النتيجة</h2>
+    <p class="muted">
+      في PROFIT بنبدأ بفهم نشاطك والجمهور اللي بتستهدفه،
+      وبعدها نحدد أنسب طريقة لتقديم علامتك التجارية.
+    </p>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="tag">LET'S WORK TOGETHER</div>
+    <h2>عندك مشروع وعايز تطوره؟</h2>
+    <p class="muted">تواصل معانا وخلينا نعرف أكتر عن احتياجاتك.</p>
+    <a class="btn" href="https://wa.me/20XXXXXXXXXX">تواصل عبر واتساب</a>
+  </section>
+</main>
+
+<footer>
+  © 2026 PROFIT — Advertising & Marketing
+</footer>
+
+</body>
+</html>
