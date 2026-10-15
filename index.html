@@ -541,49 +541,42 @@ footer {
     
 
 
-/* حركة كروت الخدمات - الوضع الآمن */
+/* حركة آمنة لكروت الخدمات */
 .services-grid .service-card {
   opacity: 1;
-  transform: translateX(0);
+  visibility: visible;
+  transform: none;
+  transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
-/* لا تبدأ الحركة إلا بعد تجهيز الكروت */
-.services-grid.motion-ready .service-card {
-  opacity: 0;
-  transition: transform 0.4s ease-out, opacity 0.3s ease-out;
-}
-
-/* الدخول من اليمين */
+/* حركة الدخول من اليمين */
 .services-grid.motion-ready .service-card.from-right:not(.is-visible) {
+  transform: translateX(60px);
   opacity: 0;
-  transform: translateX(100vw);
 }
 
-/* الدخول من الشمال */
+/* حركة الدخول من الشمال */
 .services-grid.motion-ready .service-card.from-left:not(.is-visible) {
+  transform: translateX(-60px);
   opacity: 0;
-  transform: translateX(-100vw);
 }
 
 /* الكارت بعد الوصول */
 .services-grid.motion-ready .service-card.is-visible {
   opacity: 1;
+  visibility: visible;
   transform: translateX(0);
 }
 
-/* إيقاف الحركة لو JavaScript لم يجهز الكروت */
-.services-grid:not(.motion-ready) .service-card {
-  opacity: 1;
-  transform: none;
-}
-
+/* احترام تفضيل تقليل الحركة */
 @media (prefers-reduced-motion: reduce) {
-  .services-grid.motion-ready .service-card {
+  .services-grid .service-card {
     transition: none;
     transform: none;
     opacity: 1;
   }
 }
+
 
 
 /* إصلاح ظهور كروت الخدمات */
