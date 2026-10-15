@@ -297,6 +297,246 @@ footer {
     font-size: 16px;
   }
 }
+
+    
+/* PROFIT SERVICES SECTION */
+
+.services-section {
+  background: #0B0F0D;
+  color: #FFFFFF;
+  padding: 90px 20px;
+  direction: rtl;
+}
+
+.services-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.services-heading {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.services-label {
+  display: block;
+  color: #24D17E;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  direction: ltr;
+}
+
+.services-heading h2 {
+  font-size: clamp(32px, 4vw, 44px);
+  font-weight: 800;
+  margin: 12px 0;
+}
+
+.services-heading p {
+  color: #B9C4BD;
+  font-size: 16px;
+  line-height: 1.8;
+  margin: 0;
+}
+
+.services-heading-line {
+  width: 50px;
+  height: 3px;
+  background: #24D17E;
+  border-radius: 5px;
+  margin: 20px auto 0;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.service-card {
+  background: #141A16;
+  border: 1px solid #2A3C31;
+  border-radius: 14px;
+  padding: 24px 20px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease,
+              border-color 0.25s ease,
+              background 0.25s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  border-color: #24D17E;
+  background: #17211B;
+}
+
+.service-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.service-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 10px;
+  background: #20372A;
+  color: #24D17E;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+}
+
+.service-number {
+  color: #24D17E;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.service-card h3 {
+  color: #FFFFFF;
+  font-size: 19px;
+  font-weight: 800;
+  line-height: 1.6;
+  margin: 0 0 8px;
+}
+
+.service-en {
+  color: #24D17E;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  line-height: 1.7;
+  direction: ltr;
+  text-align: right;
+  overflow-wrap: anywhere;
+}
+
+.service-card > p {
+  color: #C4CCC7;
+  font-size: 14px;
+  line-height: 1.9;
+  margin: 14px 0 22px;
+}
+
+.service-footer {
+  border-top: 1px solid #29352E;
+  padding-top: 15px;
+  margin-top: auto;
+  color: #24D17E;
+  font-size: 13px;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.services-cta {
+  text-align: center;
+  margin-top: 65px;
+}
+
+.services-cta h3 {
+  color: #FFFFFF;
+  font-size: 25px;
+  font-weight: 800;
+  margin: 0 0 10px;
+}
+
+.services-cta p {
+  color: #B9C4BD;
+  margin: 0 0 22px;
+  line-height: 1.8;
+}
+
+.services-contact {
+  display: inline-block;
+  color: #24D17E;
+  border: 1px solid #24D17E;
+  border-radius: 8px;
+  padding: 12px 28px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: background 0.2s ease,
+              color 0.2s ease;
+}
+
+.services-contact:hover {
+  background: #24D17E;
+  color: #0B0F0D;
+}
+
+@media (max-width: 900px) {
+  .services-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 15px;
+  }
+}
+
+@media (max-width: 600px) {
+  .services-section {
+    padding: 65px 16px;
+  }
+
+  .services-heading {
+    margin-bottom: 32px;
+  }
+
+  .services-heading h2 {
+    font-size: 34px;
+  }
+
+  .services-heading p {
+    font-size: 14px;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .service-card {
+    padding: 17px 13px;
+    border-radius: 12px;
+  }
+
+  .service-card-top {
+    margin-bottom: 18px;
+  }
+
+  .service-icon {
+    width: 38px;
+    height: 38px;
+    font-size: 21px;
+  }
+
+  .service-card h3 {
+    font-size: 16px;
+  }
+
+  .service-en {
+    font-size: 9px;
+  }
+
+  .service-card > p {
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  .service-footer {
+    font-size: 11px;
+  }
+
+  .services-cta {
+    margin-top: 45px;
+  }
+  }
     
     
   </style>
@@ -331,49 +571,118 @@ footer {
 </div>
 
   </div>
+
+<section class="services-section" id="services">
+  <div class="services-container">
+
+    <div class="services-heading">
+      <span class="services-label">OUR SERVICES</span>
+      <h2>خدماتنا</h2>
+      <p>كل ما يحتاجه مشروعك ليظهر بشكل احترافي.</p>
+      <div class="services-heading-line"></div>
+    </div>
+
+    <div class="services-grid">
+
+      <article class="service-card">
+        <div class="service-card-top">
+          <div class="service-icon">📣</div>
+          <span class="service-number">01</span>
+        </div>
+        <h3>الحملات الإعلانية</h3>
+        <span class="service-en">ADVERTISING CAMPAIGNS</span>
+        <p>حملات إعلانية تخاطب جمهورك المناسب.</p>
+        <div class="service-footer">اكتشف الخدمة <span>←</span></div>
+      </article>
+
+      <article class="service-card">
+        <div class="service-card-top">
+          <div class="service-icon">✒</div>
+          <span class="service-number">02</span>
+        </div>
+        <h3>تصميم اللوجوهات</h3>
+        <span class="service-en">LOGO DESIGN</span>
+        <p>شعار يعكس شخصية مشروعك.</p>
+        <div class="service-footer">اكتشف الخدمة <span>←</span></div>
+      </article>
+
+      <article class="service-card">
+        <div class="service-card-top">
+          <div class="service-icon">✦</div>
+          <span class="service-number">03</span>
+        </div>
+        <h3>صناعة المحتوى</h3>
+        <span class="service-en">CONTENT CREATION</span>
+        <p>أفكار ومحتوى يخدم أهدافك.</p>
+        <div class="service-footer">اكتشف الخدمة <span>←</span></div>
+      </article>
+
+      <article class="service-card">
+        <div class="service-card-top">
+          <div class="service-icon">◉</div>
+          <span class="service-number">04</span>
+        </div>
+        <h3>إدارة السوشيال ميديا</h3>
+        <span class="service-en">SOCIAL MEDIA MANAGEMENT</span>
+        <p>إدارة احترافية لحضورك الرقمي.</p>
+        <div class="service-footer">اكتشف الخدمة <span>←</span></div>
+      </article>
+
+      <article class="service-card">
+        <div class="service-card-top">
+          <div class="service-icon">📷</div>
+          <span class="service-number">05</span>
+        </div>
+        <h3>التصوير</h3>
+        <span class="service-en">PHOTOGRAPHY & VIDEOGRAPHY</span>
+        <p>تصوير المنتجات والمشروعات.</p>
+        <div class="service-footer">اكتشف الخدمة <span>←</span></div>
+      </article>
+
+      <article class="service-card">
+        <div class="service-card-top">
+          <div class="service-icon">▶</div>
+          <span class="service-number">06</span>
+        </div>
+        <h3>المونتاج</h3>
+        <span class="service-en">VIDEO EDITING</span>
+        <p>فيديوهات جذابة بإخراج احترافي.</p>
+        <div class="service-footer">اكتشف الخدمة <span>←</span></div>
+      </article>
+
+      <article class="service-card">
+        <div class="service-card-top">
+          <div class="service-icon">◈</div>
+          <span class="service-number">07</span>
+        </div>
+        <h3>صناعة الهوية البصرية</h3>
+        <span class="service-en">BRAND IDENTITY DESIGN</span>
+        <p>ألوان وخطوط وهوية متكاملة لعلامتك.</p>
+        <div class="service-footer">اكتشف الخدمة <span>←</span></div>
+      </article>
+
+      <article class="service-card">
+        <div class="service-card-top">
+          <div class="service-icon">▣</div>
+          <span class="service-number">08</span>
+        </div>
+        <h3>بناء الصفحات من الصفر</h3>
+        <span class="service-en">SOCIAL MEDIA PAGE SETUP</span>
+        <p>إنشاء وتجهيز صفحات نشاطك التجاري.</p>
+        <div class="service-footer">اكتشف الخدمة <span>←</span></div>
+      </article>
+
+    </div>
+
+    <div class="services-cta">
+      <h3>جاهز تطوّر مشروعك؟</h3>
+      <p>خلينا نبدأ نتكلم عن فكرتك.</p>
+      <a href="#contact" class="services-contact">تواصل مع Profit</a>
+    </div>
+
+  </div>
 </section>
 
-
-    <div class="tag">WHAT WE DO</div>
-    <h2>خدماتنا</h2>
-    <p class="muted">حلول إعلانية تساعد مشروعك يظهر بصورة احترافية.</p>
-
-    <div class="services">
-      <article class="service">
-        <h3>الهوية البصرية</h3>
-        <p class="muted">تصميم الشعارات والعناصر البصرية لعلامتك التجارية.</p>
-      </article>
-      <article class="service">
-        <h3>إدارة السوشيال ميديا</h3>
-        <p class="muted">تنظيم المحتوى وتحسين حضور مشروعك على المنصات.</p>
-      </article>
-      <article class="service">
-        <h3>صناعة المحتوى</h3>
-        <p class="muted">أفكار وسيناريوهات وتصوير ومونتاج الفيديوهات.</p>
-      </article>
-      <article class="service">
-        <h3>الدعاية والإعلان</h3>
-        <p class="muted">مواد دعائية وحملات إعلانية تناسب أهداف نشاطك.</p>
-      </article>
-    </div>
-  </section>
-
-  <section id="about">
-    <div class="tag">ABOUT PROFIT</div>
-    <h2>إحنا بنفكر في النتيجة</h2>
-    <p class="muted">
-      في PROFIT بنبدأ بفهم نشاطك والجمهور اللي بتستهدفه،
-      وبعدها نحدد أنسب طريقة لتقديم علامتك التجارية.
-    </p>
-  </section>
-
-  <section class="contact" id="contact">
-    <div class="tag">LET'S WORK TOGETHER</div>
-    <h2>عندك مشروع وعايز تطوره؟</h2>
-    <p class="muted">تواصل معانا وخلينا نعرف أكتر عن احتياجاتك.</p>
-    <a class="btn" href="https://wa.me/20XXXXXXXXXX">تواصل عبر واتساب</a>
-  </section>
-</main>
 
 <footer>
   © 2026 PROFIT — Advertising & Marketing
