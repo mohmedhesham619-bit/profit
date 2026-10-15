@@ -539,48 +539,51 @@ footer {
   }
 
     
-/* حركة ظهور كروت الخدمات */
+
+/* حركة دخول الكروت من خارج الشاشة */
 .services-grid .service-card {
   opacity: 0;
-  transform: translateX(45px);
+  transform: translateX(110vw);
   transition:
-    opacity 0.7s ease,
-    transform 0.7s ease;
-  will-change: opacity, transform;
+    transform 0.85s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.65s ease;
+  will-change: transform, opacity;
 }
 
-/* الكروت الموجودة في الجهة اليسرى */
+/* الكروت القادمة من الشمال */
 .services-grid .service-card:nth-child(4n + 2),
 .services-grid .service-card:nth-child(4n + 3) {
-  transform: translateX(-45px);
+  transform: translateX(-110vw);
 }
 
-/* عند اقتراب الكارت من الشاشة */
+/* عند ظهور الكارت: يستقر في مكانه الطبيعي */
 .services-grid .service-card.is-visible {
   opacity: 1;
   transform: translateX(0);
 }
 
-/* الموبايل: كارت يمين وكارت شمال */
+/* الموبايل: كارت يمين وكارت شمال في كل سطر */
 @media (max-width: 900px) {
   .services-grid .service-card:nth-child(odd) {
-    transform: translateX(45px);
+    transform: translateX(110vw);
   }
 
   .services-grid .service-card:nth-child(even) {
-    transform: translateX(-45px);
+    transform: translateX(-110vw);
   }
 }
 
-/* تقليل الحركة لمن يفضل ذلك */
+/* منع الحركة لمن يفضل تقليلها */
 @media (prefers-reduced-motion: reduce) {
-  .services-grid .service-card {
+  .services-grid .service-card,
+  .services-grid .service-card:nth-child(n) {
     opacity: 1;
     transform: none;
     transition: none;
     will-change: auto;
   }
 }
+
     
     
   </style>
