@@ -537,6 +537,50 @@ footer {
     margin-top: 45px;
   }
   }
+
+    
+/* حركة ظهور كروت الخدمات */
+.services-grid .service-card {
+  opacity: 0;
+  transform: translateX(45px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+  will-change: opacity, transform;
+}
+
+/* الكروت الموجودة في الجهة اليسرى */
+.services-grid .service-card:nth-child(4n + 2),
+.services-grid .service-card:nth-child(4n + 3) {
+  transform: translateX(-45px);
+}
+
+/* عند اقتراب الكارت من الشاشة */
+.services-grid .service-card.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* الموبايل: كارت يمين وكارت شمال */
+@media (max-width: 900px) {
+  .services-grid .service-card:nth-child(odd) {
+    transform: translateX(45px);
+  }
+
+  .services-grid .service-card:nth-child(even) {
+    transform: translateX(-45px);
+  }
+}
+
+/* تقليل الحركة لمن يفضل ذلك */
+@media (prefers-reduced-motion: reduce) {
+  .services-grid .service-card {
+    opacity: 1;
+    transform: none;
+    transition: none;
+    will-change: auto;
+  }
+}
     
     
   </style>
@@ -688,5 +732,43 @@ footer {
   © 2026 PROFIT — Advertising & Marketing
 </footer>
 
+  
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const cards = document.querySelectorAll(
+    ".services-grid .service-card"
+  );
+
+  if (!cards.length) return;
+
+  const observer = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+
+        const card = entry.target;
+        const index = Array.from(cards).indexOf(card);
+
+        // تأخير متدرج داخل كل سطر
+        setTimeout(function () {
+          card.classList.add("is-visible");
+        }, (index % 4) * 130);
+
+        observer.unobserve(card);
+      });
+    },
+    {
+      threshold: 0.15
+    }
+  );
+
+  cards.forEach(function (card) {
+    observer.observe(card);
+  });
+});
+</script>
 </body>
+</html>
+
+  </body>
 </html>
