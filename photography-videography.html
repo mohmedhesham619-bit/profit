@@ -1,1 +1,480 @@
 
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080b0a">
+  <title>Photography & Videography | PROFIT Agency</title>
+
+  <style>
+    :root {
+      --bg: #080b0a;
+      --card: #111714;
+      --green: #24d17e;
+      --white: #ffffff;
+      --muted: #a9b4ae;
+      --border: rgba(255,255,255,0.09);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Tahoma, sans-serif;
+      background:
+        radial-gradient(ellipse at top, rgba(36,209,126,0.09), transparent 45%),
+        var(--bg);
+      color: var(--white);
+      line-height: 1.8;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(1100px, 90%);
+      margin: auto;
+    }
+
+    header {
+      padding: 24px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 27px;
+      font-weight: 900;
+      letter-spacing: 2px;
+    }
+
+    .logo span {
+      color: var(--green);
+    }
+
+    .back-link {
+      color: var(--muted);
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    .back-link:hover {
+      color: var(--green);
+    }
+
+    .hero {
+      text-align: center;
+      padding: 85px 0 65px;
+    }
+
+    .eyebrow {
+      color: var(--green);
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(32px, 5vw, 55px);
+      line-height: 1.4;
+      margin-bottom: 20px;
+    }
+
+    h1 span {
+      color: var(--green);
+    }
+
+    .hero p {
+      max-width: 760px;
+      margin: auto;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .section {
+      padding: 45px 0 75px;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(25px, 4vw, 35px);
+      margin-bottom: 10px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .service-card {
+      background: linear-gradient(145deg, #131a16, #0d110f);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 26px 23px;
+      transition: transform 0.3s, border-color 0.3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--green);
+    }
+
+    .number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: rgba(36,209,126,0.12);
+      color: var(--green);
+      font-weight: bold;
+      margin-bottom: 18px;
+    }
+
+    .service-card h3 {
+      font-size: 19px;
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .highlight {
+      padding: 35px;
+      border: 1px solid rgba(36,209,126,0.25);
+      border-radius: 22px;
+      background: linear-gradient(
+        120deg,
+        rgba(36,209,126,0.10),
+        rgba(17,23,20,0.85)
+      );
+      margin: 0 auto 70px;
+    }
+
+    .highlight h2 {
+      font-size: 27px;
+      margin-bottom: 12px;
+    }
+
+    .highlight h2 span {
+      color: var(--green);
+    }
+
+    .highlight p {
+      color: var(--muted);
+      max-width: 850px;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .step {
+      padding: 22px 18px;
+      border-right: 2px solid var(--green);
+      background: rgba(255,255,255,0.025);
+      border-radius: 8px 14px 14px 8px;
+    }
+
+    .step h3 {
+      font-size: 17px;
+      margin-bottom: 8px;
+    }
+
+    .step p {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .cta {
+      text-align: center;
+      padding: 65px 20px;
+      border-top: 1px solid var(--border);
+      background: rgba(36,209,126,0.035);
+    }
+
+    .cta h2 {
+      font-size: clamp(25px, 4vw, 36px);
+      margin-bottom: 12px;
+    }
+
+    .cta p {
+      color: var(--muted);
+      margin-bottom: 25px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      border-radius: 10px;
+      font-weight: bold;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    .btn-primary {
+      background: var(--green);
+      color: #061009;
+    }
+
+    .btn-primary:hover {
+      background: #43e695;
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      border: 1px solid var(--border);
+      color: var(--white);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--green);
+      color: var(--green);
+    }
+
+    footer {
+      text-align: center;
+      padding: 23px 15px;
+      border-top: 1px solid var(--border);
+      color: #7f8b84;
+      font-size: 12px;
+    }
+
+    footer span {
+      color: var(--green);
+      font-weight: bold;
+    }
+
+    @media (max-width: 800px) {
+      .services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .steps {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .hero {
+        padding-top: 65px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .services-grid,
+      .steps {
+        grid-template-columns: 1fr;
+      }
+
+      .highlight {
+        padding: 25px 20px;
+      }
+
+      .logo {
+        font-size: 23px;
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container nav">
+      <a href="index.html" class="logo">PROFIT<span>.</span></a>
+      <a href="index.html#services" class="back-link">← كل الخدمات</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <div class="eyebrow">PHOTOGRAPHY & VIDEOGRAPHY</div>
+
+      <h1>
+        خلّي مشروعك <span>يتشاف</span><br>
+        بالصورة اللي يستحقها
+      </h1>
+
+      <p>
+        الصورة والفيديو مش مجرد شكل حلو؛ دول وسيلة بتوصل بيها قيمة مشروعك
+        للناس. في PROFIT بنساعدك تقدم منتجاتك وخدماتك بشكل بصري احترافي
+        يناسب هويتك ويخدم هدفك التسويقي.
+      </p>
+    </section>
+
+    <section class="section container">
+      <div class="section-heading">
+        <h2>خدمات التصوير والإنتاج</h2>
+        <p>محتوى بصري يساعدك تعرض شغلك بصورة أوضح وأكثر احترافية.</p>
+      </div>
+
+      <div class="services-grid">
+
+        <article class="service-card">
+          <div class="number">01</div>
+          <h3>تصوير المنتجات</h3>
+          <p>
+            صور واضحة وجذابة تبرز تفاصيل المنتج ومميزاته،
+            وتساعد العميل يفهم قيمته قبل ما يشتريه.
+          </p>
+        </article>
+
+        <article class="service-card">
+          <div class="number">02</div>
+          <h3>تصوير الفيديو</h3>
+          <p>
+            فيديوهات تعرض خدماتك أو منتجاتك بطريقة منظمة،
+            وتوصل رسالتك بشكل يناسب جمهورك.
+          </p>
+        </article>
+
+        <article class="service-card">
+          <div class="number">03</div>
+          <h3>فيديوهات السوشيال ميديا</h3>
+          <p>
+            تصوير محتوى مناسب للريلز والمنصات الاجتماعية،
+            مع مراعاة طبيعة كل منصة وطريقة مشاهدة الجمهور.
+          </p>
+        </article>
+
+        <article class="service-card">
+          <div class="number">04</div>
+          <h3>تصوير المشاريع والشركات</h3>
+          <p>
+            توثيق المكان وفريق العمل والخدمات والمشروعات
+            علشان العميل ياخد صورة أوضح عن نشاطك.
+          </p>
+        </article>
+
+        <article class="service-card">
+          <div class="number">05</div>
+          <h3>تصوير الحملات الإعلانية</h3>
+          <p>
+            تجهيز لقطات وصور تخدم فكرة الإعلان،
+            وتساعد على تقديم الرسالة التسويقية بشكل جذاب.
+          </p>
+        </article>
+
+        <article class="service-card">
+          <div class="number">06</div>
+          <h3>تجهيز المحتوى للنشر</h3>
+          <p>
+            تنظيم وتسليم الصور والفيديوهات بالمقاسات
+            والصيغ المناسبة للاستخدام على المنصات المختلفة.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="container">
+      <div class="highlight">
+        <h2>مش الهدف إن الصورة تبقى حلوة وبس...</h2>
+        <p>
+          الهدف إنها توصل رسالة. تصوير مطعم محتاج يفتح نفس العميل،
+          وتصوير شركة محتاج يبرز الاحترافية، وتصوير منتج محتاج يوضح
+          التفاصيل اللي تفرق في قرار الشراء. علشان كده بنبدأ من هدفك
+          قبل ما نحدد شكل المحتوى.
+        </p>
+      </div>
+    </section>
+
+    <section class="section container">
+      <div class="section-heading">
+        <h2>بنشتغل إزاي؟</h2>
+        <p>خطوات واضحة من فهم فكرتك لحد استلام المحتوى.</p>
+      </div>
+
+      <div class="steps">
+
+        <div class="step">
+          <h3>01 — نفهم نشاطك</h3>
+          <p>نعرف طبيعة مشروعك والجمهور والهدف من التصوير.</p>
+        </div>
+
+        <div class="step">
+          <h3>02 — نحدد الفكرة</h3>
+          <p>نرتب الرسالة واللقطات المطلوبة وطريقة عرض المحتوى.</p>
+        </div>
+
+        <div class="step">
+          <h3>03 — ننفذ التصوير</h3>
+          <p>ننتج المحتوى وفق الخطة المتفق عليها وطبيعة الاستخدام.</p>
+        </div>
+
+        <div class="step">
+          <h3>04 — نسلّم المحتوى</h3>
+          <p>نجهز الملفات المتفق عليها للاستخدام والنشر.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <h2>جاهز تعرض مشروعك بشكل أقوى؟</h2>
+        <p>
+          احكيلنا عن نشاطك وهدفك، ونشوف أنسب طريقة لتصوير محتواك.
+        </p>
+
+        <div class="buttons">
+          <a href="index.html#contact" class="btn btn-primary">
+            تواصل معانا
+          </a>
+
+          <a href="index.html#services" class="btn btn-secondary">
+            استكشف باقي الخدمات
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div>© PROFIT Agency — <span>Strategy • Creativity • Growth</span></div>
+  </footer>
+
+</body>
+  </html>
