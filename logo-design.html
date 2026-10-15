@@ -1,1 +1,317 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Logo Design | PROFIT Agency</title>
 
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #080b0a;
+      color: #fff;
+      line-height: 1.8;
+      min-height: 100vh;
+    }
+
+    .container {
+      width: min(1100px, 92%);
+      margin: auto;
+    }
+
+    header {
+      padding: 24px 0;
+      border-bottom: 1px solid #202923;
+    }
+
+    .brand {
+      direction: ltr;
+      text-align: center;
+      font-size: 30px;
+      font-weight: 900;
+      letter-spacing: 5px;
+    }
+
+    .brand span {
+      color: #24d17e;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 75px 0 45px;
+    }
+
+    .eyebrow {
+      color: #24d17e;
+      letter-spacing: 3px;
+      font-size: 13px;
+      direction: ltr;
+    }
+
+    h1 {
+      font-size: clamp(32px, 6vw, 58px);
+      line-height: 1.3;
+      margin: 15px 0;
+    }
+
+    h1 span {
+      color: #24d17e;
+    }
+
+    .intro {
+      max-width: 680px;
+      margin: 0 auto;
+      color: #c1c9c4;
+      font-size: 17px;
+    }
+
+    .section {
+      padding: 35px 0;
+    }
+
+    .section-title {
+      font-size: 27px;
+      margin-bottom: 20px;
+    }
+
+    .section-title span {
+      color: #24d17e;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background: #101613;
+      border: 1px solid #26342b;
+      border-radius: 16px;
+      padding: 24px;
+      transition: .25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: #24d17e;
+    }
+
+    .icon {
+      font-size: 30px;
+      margin-bottom: 12px;
+    }
+
+    .card h3 {
+      font-size: 19px;
+      margin-bottom: 8px;
+    }
+
+    .card p {
+      color: #aeb8b1;
+      font-size: 15px;
+    }
+
+    .process {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .step {
+      border-right: 2px solid #24d17e;
+      padding: 8px 16px;
+    }
+
+    .step strong {
+      display: block;
+      color: #24d17e;
+      margin-bottom: 6px;
+    }
+
+    .cta {
+      text-align: center;
+      margin: 45px 0 65px;
+      padding: 38px 22px;
+      border: 1px solid #263b2e;
+      border-radius: 20px;
+      background: linear-gradient(135deg, #101813, #0a0d0b);
+    }
+
+    .cta h2 {
+      font-size: 27px;
+      margin-bottom: 10px;
+    }
+
+    .cta p {
+      color: #b8c1bb;
+      margin-bottom: 22px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      border-radius: 9px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: .2s;
+    }
+
+    .primary {
+      background: #24d17e;
+      color: #07110b;
+    }
+
+    .primary:hover {
+      background: #42e493;
+    }
+
+    .secondary {
+      border: 1px solid #536258;
+      color: #fff;
+    }
+
+    footer {
+      border-top: 1px solid #202923;
+      text-align: center;
+      padding: 22px;
+      color: #859188;
+      font-size: 13px;
+    }
+
+    @media (max-width: 750px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .process {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 25px;
+      }
+
+      .hero {
+        padding-top: 50px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .process {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container brand">
+      PROFIT<span>.</span>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="hero">
+      <p class="eyebrow">BRAND IDENTITY STARTS HERE</p>
+
+      <h1>
+        تصميم لوجو يخلّي<br>
+        <span>براندك يتعرف</span>
+      </h1>
+
+      <p class="intro">
+        اللوجو مش مجرد شكل حلو؛ هو أول انطباع عن مشروعك،
+        وعلامة تساعد الناس تفتكر البراند وتميّزه عن المنافسين.
+        في PROFIT بنصمم لوجوهات تناسب طبيعة نشاطك والجمهور اللي بتستهدفه.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">إيه اللي بنقدمه في <span>تصميم اللوجو؟</span></h2>
+
+      <div class="grid">
+
+        <article class="card">
+          <div class="icon">✳</div>
+          <h3>تصميم لوجو مميز</h3>
+          <p>فكرة بصرية مناسبة لنشاطك وتساعد مشروعك يظهر بشكل واضح ومختلف.</p>
+        </article>
+
+        <article class="card">
+          <div class="icon">◈</div>
+          <h3>اختيار الألوان والخطوط</h3>
+          <p>تناسق في الألوان والخطوط يعكس شخصية البراند وطبيعة جمهوره.</p>
+        </article>
+
+        <article class="card">
+          <div class="icon">▣</div>
+          <h3>نسخ للاستخدامات المختلفة</h3>
+          <p>تجهيز التصميم للاستخدام على السوشيال ميديا والمطبوعات حسب الاتفاق.</p>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">بنشتغل <span>إزاي؟</span></h2>
+
+      <div class="process">
+        <div class="step">
+          <strong>01 — فهم النشاط</strong>
+          <p>نعرف مشروعك وجمهورك والمنافسين.</p>
+        </div>
+
+        <div class="step">
+          <strong>02 — تحديد الفكرة</strong>
+          <p>نحدد الاتجاه البصري المناسب للبراند.</p>
+        </div>
+
+        <div class="step">
+          <strong>03 — تنفيذ التصميم</strong>
+          <p>نحوّل الفكرة لتصميم واضح ومتناسق.</p>
+        </div>
+
+        <div class="step">
+          <strong>04 — التسليم</strong>
+          <p>نسلّم الملفات المتفق عليها بعد اعتماد التصميم.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <h2>جاهز تبدأ هوية براندك؟</h2>
+      <p>خلّينا نعرف تفاصيل مشروعك ونناقش أنسب اتجاه لتصميم اللوجو.</p>
+
+      <div class="buttons">
+        <a class="btn primary" href="index.html#contact">
+          تواصل معانا
+        </a>
+
+        <a class="btn secondary" href="index.html#services">
+          استكشف باقي الخدمات
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    PROFIT AGENCY — ADVERTISING &amp; MARKETING
+  </footer>
+
+</body>
+</html>
