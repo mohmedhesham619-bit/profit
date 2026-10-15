@@ -1,1 +1,479 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080b0a">
+  <title>Brand Identity Design | PROFIT Agency</title>
 
+  <style>
+    :root {
+      --bg: #080b0a;
+      --card: #111714;
+      --green: #24d17e;
+      --white: #ffffff;
+      --muted: #a9b4ae;
+      --border: rgba(255,255,255,0.09);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Tahoma, sans-serif;
+      background:
+        radial-gradient(ellipse at top, rgba(36,209,126,0.09), transparent 45%),
+        var(--bg);
+      color: var(--white);
+      line-height: 1.8;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(1100px, 90%);
+      margin: auto;
+    }
+
+    header {
+      padding: 24px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 27px;
+      font-weight: 900;
+      letter-spacing: 2px;
+    }
+
+    .logo span {
+      color: var(--green);
+    }
+
+    .back-link {
+      color: var(--muted);
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    .back-link:hover {
+      color: var(--green);
+    }
+
+    .hero {
+      text-align: center;
+      padding: 85px 0 65px;
+    }
+
+    .eyebrow {
+      color: var(--green);
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(32px, 5vw, 55px);
+      line-height: 1.4;
+      margin-bottom: 20px;
+    }
+
+    h1 span {
+      color: var(--green);
+    }
+
+    .hero p {
+      max-width: 760px;
+      margin: auto;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .section {
+      padding: 45px 0 75px;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(25px, 4vw, 35px);
+      margin-bottom: 10px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .service-card {
+      background: linear-gradient(145deg, #131a16, #0d110f);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 26px 23px;
+      transition: transform 0.3s, border-color 0.3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--green);
+    }
+
+    .number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: rgba(36,209,126,0.12);
+      color: var(--green);
+      font-weight: bold;
+      margin-bottom: 18px;
+    }
+
+    .service-card h3 {
+      font-size: 19px;
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .highlight {
+      padding: 35px;
+      border: 1px solid rgba(36,209,126,0.25);
+      border-radius: 22px;
+      background: linear-gradient(
+        120deg,
+        rgba(36,209,126,0.10),
+        rgba(17,23,20,0.85)
+      );
+      margin: 0 auto 70px;
+    }
+
+    .highlight h2 {
+      font-size: 27px;
+      margin-bottom: 12px;
+    }
+
+    .highlight h2 span {
+      color: var(--green);
+    }
+
+    .highlight p {
+      color: var(--muted);
+      max-width: 850px;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .step {
+      padding: 22px 18px;
+      border-right: 2px solid var(--green);
+      background: rgba(255,255,255,0.025);
+      border-radius: 8px 14px 14px 8px;
+    }
+
+    .step h3 {
+      font-size: 17px;
+      margin-bottom: 8px;
+    }
+
+    .step p {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .cta {
+      text-align: center;
+      padding: 65px 20px;
+      border-top: 1px solid var(--border);
+      background: rgba(36,209,126,0.035);
+    }
+
+    .cta h2 {
+      font-size: clamp(25px, 4vw, 36px);
+      margin-bottom: 12px;
+    }
+
+    .cta p {
+      color: var(--muted);
+      margin-bottom: 25px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      border-radius: 10px;
+      font-weight: bold;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    .btn-primary {
+      background: var(--green);
+      color: #061009;
+    }
+
+    .btn-primary:hover {
+      background: #43e695;
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      border: 1px solid var(--border);
+      color: var(--white);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--green);
+      color: var(--green);
+    }
+
+    footer {
+      text-align: center;
+      padding: 23px 15px;
+      border-top: 1px solid var(--border);
+      color: #7f8b84;
+      font-size: 12px;
+    }
+
+    footer span {
+      color: var(--green);
+      font-weight: bold;
+    }
+
+    @media (max-width: 800px) {
+      .services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .steps {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .hero {
+        padding-top: 65px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .services-grid,
+      .steps {
+        grid-template-columns: 1fr;
+      }
+
+      .highlight {
+        padding: 25px 20px;
+      }
+
+      .logo {
+        font-size: 23px;
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container nav">
+      <a href="index.html" class="logo">PROFIT<span>.</span></a>
+      <a href="index.html#services" class="back-link">← كل الخدمات</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <div class="eyebrow">BRAND IDENTITY DESIGN</div>
+
+      <h1>
+        خلي لبراندك شكل<br>
+        <span>الناس تعرفه وتفتكره</span>
+      </h1>
+
+      <p>
+        الهوية البصرية مش مجرد لوجو وألوان؛ هي الطريقة اللي مشروعك
+        بيظهر بيها في كل نقطة تواصل مع العميل. في PROFIT بنساعدك
+        تبني شكل بصري متناسق يعكس شخصية البراند ويميزه عن المنافسين.
+      </p>
+    </section>
+
+    <section class="section container">
+      <div class="section-heading">
+        <h2>عناصر الهوية البصرية</h2>
+        <p>كل عنصر له دور في تكوين صورة واضحة ومميزة لمشروعك.</p>
+      </div>
+
+      <div class="services-grid">
+
+        <article class="service-card">
+          <div class="number">01</div>
+          <h3>نظام الألوان</h3>
+          <p>
+            اختيار مجموعة ألوان متناسقة تناسب شخصية البراند،
+            وتساعد على توحيد شكله في مختلف التصميمات.
+          </p>
+        </article>
+
+        <article class="service-card">
+          <div class="number">02</div>
+          <h3>الخطوط والطباعة</h3>
+          <p>
+            تحديد خطوط مناسبة للعناوين والنصوص، بحيث تكون
+            واضحة ومتناسقة مع أسلوب العلامة التجارية.
+          </p>
+        </article>
+
+        <article class="service-card">
+          <div class="number">03</div>
+          <h3>أسلوب التصميم</h3>
+          <p>
+            تحديد طريقة بصرية موحدة للتصميمات، من توزيع العناصر
+            لحد استخدام الأشكال والتفاصيل الجرافيكية.
+          </p>
+        </article>
+
+        <article class="service-card">
+          <div class="number">04</div>
+          <h3>تصميمات السوشيال ميديا</h3>
+          <p>
+            قوالب وتصميمات متناسقة تساعد صفحات مشروعك تظهر
+            بهوية واضحة بدل ما كل منشور يكون بشكل مختلف.
+          </p>
+        </article>
+
+        <article class="service-card">
+          <div class="number">05</div>
+          <h3>المطبوعات والمواد التسويقية</h3>
+          <p>
+            تطبيق الهوية على الكروت والبروشورات والمواد
+            الدعائية الأخرى حسب احتياجات نشاطك.
+          </p>
+        </article>
+
+        <article class="service-card">
+          <div class="number">06</div>
+          <h3>دليل استخدام الهوية</h3>
+          <p>
+            تنظيم قواعد استخدام الألوان والخطوط والشعار
+            علشان يفضل شكل البراند متناسق في كل تطبيقاته.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="container">
+      <div class="highlight">
+        <h2>الفرق بين اللوجو والهوية البصرية <span>كبير</span></h2>
+        <p>
+          اللوجو هو علامة بتساعد الناس تتعرف على البراند،
+          لكن الهوية البصرية هي النظام الكامل اللي بيحدد شكل ظهوره.
+          يعني لما العميل يشوف منشور أو إعلان أو كارت خاص بمشروعك،
+          يقدر يحس إن كل العناصر دي بتنتمي لنفس العلامة التجارية.
+        </p>
+      </div>
+    </section>
+
+    <section class="section container">
+      <div class="section-heading">
+        <h2>بنصمم الهوية إزاي؟</h2>
+        <p>خطوات منظمة علشان الشكل النهائي يكون مناسب لطبيعة مشروعك.</p>
+      </div>
+
+      <div class="steps">
+
+        <div class="step">
+          <h3>01 — نفهم البراند</h3>
+          <p>نتعرف على نشاطك وجمهورك وشخصية العلامة التجارية.</p>
+        </div>
+
+        <div class="step">
+          <h3>02 — نحدد الاتجاه</h3>
+          <p>نختار الاتجاه البصري المناسب والألوان والخطوط.</p>
+        </div>
+
+        <div class="step">
+          <h3>03 — نصمم العناصر</h3>
+          <p>نجهز عناصر الهوية والتطبيقات المتفق عليها.</p>
+        </div>
+
+        <div class="step">
+          <h3>04 — نسلّم الهوية</h3>
+          <p>نراجع الملفات ونسلم العناصر وقواعد الاستخدام المتفق عليها.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <h2>عايز تبني هوية تليق بمشروعك؟</h2>
+        <p>
+          احكيلنا عن نشاطك والفكرة اللي عايز الناس تربطها ببراندك.
+        </p>
+
+        <div class="buttons">
+          <a href="index.html#contact" class="btn btn-primary">
+            تواصل معانا
+          </a>
+
+          <a href="index.html#services" class="btn btn-secondary">
+            استكشف باقي الخدمات
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div>© PROFIT Agency — <span>Strategy • Creativity • Growth</span></div>
+  </footer>
+
+</body>
+  </html>
