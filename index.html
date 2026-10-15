@@ -540,49 +540,57 @@ footer {
 
     
 
-/* حركة دخول الكروت من خارج الشاشة */
+/* حركة كروت الخدمات */
 .services-grid .service-card {
+  opacity: 1;
+  transform: none;
+  transition: none;
+}
+
+/* تفعيل الحركة قبل ظهور الكارت */
+.services-grid.motion-ready .service-card {
   opacity: 0;
-  transform: translateX(110vw);
+  transform: translateX(100px);
   transition:
-    transform 0.85s cubic-bezier(0.22, 1, 0.36, 1),
-    opacity 0.65s ease;
-  will-change: transform, opacity;
+    transform 0.4s ease-out,
+    opacity 0.4s ease-out;
 }
 
-/* الكروت القادمة من الشمال */
-.services-grid .service-card:nth-child(4n + 2),
-.services-grid .service-card:nth-child(4n + 3) {
-  transform: translateX(-110vw);
+/* الكروت التي تدخل من الشمال */
+.services-grid.motion-ready
+.service-card:nth-child(even) {
+  transform: translateX(-100px);
 }
 
-/* عند ظهور الكارت: يستقر في مكانه الطبيعي */
-.services-grid .service-card.is-visible {
+/* استقرار الكروت في أماكنها */
+.services-grid.motion-ready
+.service-card.is-visible {
   opacity: 1;
   transform: translateX(0);
 }
 
-/* الموبايل: كارت يمين وكارت شمال في كل سطر */
-@media (max-width: 900px) {
-  .services-grid .service-card:nth-child(odd) {
-    transform: translateX(110vw);
+/* الموبايل: نفس الاتجاهات مع مسافة مناسبة */
+@media (max-width: 600px) {
+  .services-grid.motion-ready .service-card {
+    transform: translateX(60px);
   }
 
-  .services-grid .service-card:nth-child(even) {
-    transform: translateX(-110vw);
+  .services-grid.motion-ready
+  .service-card:nth-child(even) {
+    transform: translateX(-60px);
   }
 }
 
-/* منع الحركة لمن يفضل تقليلها */
 @media (prefers-reduced-motion: reduce) {
-  .services-grid .service-card,
-  .services-grid .service-card:nth-child(n) {
+  .services-grid.motion-ready .service-card,
+  .services-grid.motion-ready
+  .service-card:nth-child(even) {
     opacity: 1;
     transform: none;
     transition: none;
-    will-change: auto;
   }
 }
+
 
     
     
@@ -736,34 +744,33 @@ footer {
 </footer>
 
   
+
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-  const cards = document.querySelectorAll(
-    ".services-grid .service-card"
-  );
+  const grid = document.querySelector(".services-grid");
+  if (!grid) return;
 
-  if (!cards.length) return;
+  const cards = grid.querySelectorAll(".service-card");
+  if (!("IntersectionObserver" in window)) return;
 
-  const observer = new IntersectionObserver(
-    function (entries) {
-      entries.forEach(function (entry) {
-        if (!entry.isIntersecting) return;
+  const observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) return;
 
-        const card = entry.target;
-        const index = Array.from(cards).indexOf(card);
+      const card = entry.target;
+      const index = Array.from(cards).indexOf(card);
 
-        // تأخير متدرج داخل كل سطر
-        setTimeout(function () {
-          card.classList.add("is-visible");
-        }, (index % 4) * 130);
+      setTimeout(function () {
+        card.classList.add("is-visible");
+      }, (index % 4) * 70);
 
-        observer.unobserve(card);
-      });
-    },
-    {
-      threshold: 0.15
-    }
-  );
+      observer.unobserve(card);
+    });
+  }, {
+    threshold: 0.05
+  });
+
+  grid.classList.add("motion-ready");
 
   cards.forEach(function (card) {
     observer.observe(card);
