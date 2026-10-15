@@ -546,48 +546,41 @@ footer {
   transform: none;
   transition: none;
 }
+/* الحالة الطبيعية */
+.services-grid .service-card {
+  opacity: 1;
+  transform: translateX(0);
+}
+    
 
-/* تفعيل الحركة قبل ظهور الكارت */
+/* بداية الحركة */
 .services-grid.motion-ready .service-card {
   opacity: 0;
-  transform: translateX(100px);
+  transform: translateX(100vw);
   transition:
-    transform 0.4s ease-out,
-    opacity 0.4s ease-out;
+    transform 0.45s ease-out,
+    opacity 0.35s ease-out;
 }
 
-/* الكروت التي تدخل من الشمال */
-.services-grid.motion-ready
-.service-card:nth-child(even) {
-  transform: translateX(-100px);
+/* الكروت القادمة من الشمال */
+.services-grid.motion-ready .service-card:nth-child(even) {
+  transform: translateX(-100vw);
 }
 
-/* استقرار الكروت في أماكنها */
-.services-grid.motion-ready
-.service-card.is-visible {
+/* الوصول لمكان الكارت */
+.services-grid.motion-ready .service-card.is-visible {
   opacity: 1;
   transform: translateX(0);
 }
 
-/* الموبايل: نفس الاتجاهات مع مسافة مناسبة */
+/* الموبايل */
 @media (max-width: 600px) {
   .services-grid.motion-ready .service-card {
-    transform: translateX(60px);
+    transform: translateX(100vw);
   }
 
-  .services-grid.motion-ready
-  .service-card:nth-child(even) {
-    transform: translateX(-60px);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .services-grid.motion-ready .service-card,
-  .services-grid.motion-ready
-  .service-card:nth-child(even) {
-    opacity: 1;
-    transform: none;
-    transition: none;
+  .services-grid.motion-ready .service-card:nth-child(even) {
+    transform: translateX(-100vw);
   }
 }
 
