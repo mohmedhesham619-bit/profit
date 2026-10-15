@@ -1,189 +1,375 @@
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="خدمات الحملات الإعلانية من PROFIT Advertising & Marketing.">
-  <title>الحملات الإعلانية | PROFIT</title>
+  <title>Advertising Campaigns | PROFIT Agency</title>
 
   <style>
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     body {
-      margin: 0;
-      min-height: 100vh;
       font-family: Arial, sans-serif;
+      background: #080b0a;
       color: #fff;
-      background:
-        linear-gradient(rgba(5, 8, 10, .78), rgba(5, 8, 10, .92)),
-        url("city-night.png") center / cover fixed no-repeat;
-      display: flex;
-      flex-direction: column;
+      line-height: 1.8;
+    }
+
+    .container {
+      width: min(1100px, 92%);
+      margin: auto;
     }
 
     header {
-      padding: 25px 6%;
-      text-align: center;
+      padding: 24px 0;
+      border-bottom: 1px solid #202923;
     }
 
-    .logo {
-      color: #fff;
-      font-size: 38px;
-      font-weight: 900;
-      letter-spacing: 2px;
-    }
-
-    .logo span {
-      color: #24D17E;
-    }
-
-    .subtitle {
-      margin-top: 5px;
-      font-size: 11px;
-      font-weight: bold;
-      letter-spacing: 2px;
-    }
-
-    main {
-      flex: 1;
-      width: 100%;
-      max-width: 850px;
-      margin: 0 auto;
-      padding: 45px 20px 70px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .label {
-      color: #24D17E;
-      font-size: 12px;
-      font-weight: bold;
-      letter-spacing: 2px;
+    .brand {
       direction: ltr;
-      margin-bottom: 12px;
+      text-align: center;
+      font-size: 30px;
+      font-weight: 900;
+      letter-spacing: 5px;
+    }
+
+    .brand span,
+    .green {
+      color: #24d17e;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 75px 0 50px;
+    }
+
+    .eyebrow {
+      color: #24d17e;
+      letter-spacing: 3px;
+      font-size: 13px;
+      direction: ltr;
     }
 
     h1 {
-      margin: 0 0 25px;
-      text-align: center;
-      font-size: clamp(30px, 6vw, 46px);
-      line-height: 1.5;
+      font-size: clamp(32px, 6vw, 58px);
+      line-height: 1.35;
+      margin: 15px 0;
     }
 
-    .service-card {
-      width: 100%;
-      max-width: 620px;
-      padding: 30px;
-      background: rgba(17, 24, 19, .88);
-      border: 1px solid rgba(36, 209, 126, .4);
+    .intro {
+      max-width: 720px;
+      margin: auto;
+      color: #c1c9c4;
+      font-size: 17px;
+    }
+
+    .section {
+      padding: 30px 0;
+    }
+
+    .section-title {
+      font-size: 27px;
+      margin-bottom: 22px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background: #101613;
+      border: 1px solid #26342b;
       border-radius: 16px;
-      box-shadow: 0 0 35px rgba(36, 209, 126, .08);
+      padding: 25px;
+      transition: .25s;
     }
 
-    .service-card h2 {
-      color: #24D17E;
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: #24d17e;
+    }
+
+    .icon {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .card h3 {
       font-size: 19px;
-      margin: 0 0 12px;
+      margin-bottom: 8px;
     }
 
-    .service-card p {
-      color: #D5DDD8;
-      font-size: 16px;
-      line-height: 2;
-      margin: 0;
+    .card p {
+      color: #aeb8b1;
+      font-size: 15px;
     }
 
-    .actions {
+    .highlight {
+      margin-top: 25px;
+      padding: 28px;
+      border-right: 3px solid #24d17e;
+      background: #101613;
+      border-radius: 12px;
+    }
+
+    .highlight p {
+      color: #c1c9c4;
+      margin-top: 8px;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .step {
+      padding: 16px;
+      border-top: 1px solid #24d17e;
+      background: #0d120f;
+      border-radius: 10px;
+    }
+
+    .step strong {
+      display: block;
+      color: #24d17e;
+      margin-bottom: 8px;
+    }
+
+    .cta {
+      text-align: center;
+      margin: 50px 0 65px;
+      padding: 40px 22px;
+      border: 1px solid #263b2e;
+      border-radius: 20px;
+      background: linear-gradient(135deg, #101813, #0a0d0b);
+    }
+
+    .cta h2 {
+      font-size: 27px;
+      margin-bottom: 10px;
+    }
+
+    .cta p {
+      color: #b8c1bb;
+      margin-bottom: 22px;
+    }
+
+    .buttons {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
       gap: 12px;
-      margin-top: 28px;
     }
 
     .btn {
       display: inline-block;
       padding: 12px 24px;
-      border: 1px solid #24D17E;
-      border-radius: 8px;
+      border-radius: 9px;
       text-decoration: none;
       font-weight: bold;
-      color: #24D17E;
-      transition: .2s ease;
     }
 
-    .btn.primary {
-      background: #24D17E;
-      color: #07130C;
+    .primary {
+      background: #24d17e;
+      color: #07110b;
     }
 
-    .btn:hover {
-      transform: translateY(-2px);
+    .secondary {
+      border: 1px solid #536258;
+      color: #fff;
     }
 
     footer {
-      padding: 20px;
+      border-top: 1px solid #202923;
       text-align: center;
-      color: #AEB5BD;
-      border-top: 1px solid rgba(255, 255, 255, .12);
-      font-size: 12px;
+      padding: 22px;
+      color: #859188;
+      font-size: 13px;
     }
 
-    @media (max-width: 600px) {
-      header {
-        padding: 22px 15px;
+    @media (max-width: 750px) {
+      .grid {
+        grid-template-columns: 1fr;
       }
 
-      .service-card {
-        padding: 23px 20px;
+      .steps {
+        grid-template-columns: repeat(2, 1fr);
       }
 
-      .service-card p {
-        font-size: 14px;
+      .hero {
+        padding-top: 50px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .steps {
+        grid-template-columns: 1fr;
       }
     }
   </style>
 </head>
 
 <body>
+
   <header>
-    <div class="logo">PRO<span>FIT</span></div>
-    <div class="subtitle">ADVERTISING &amp; MARKETING</div>
+    <div class="container brand">
+      PROFIT<span>.</span>
+    </div>
   </header>
 
-  <main>
-    <div class="label">OUR SERVICES</div>
+  <main class="container">
 
-    <h1>الحملات الإعلانية</h1>
+    <section class="hero">
+      <p class="eyebrow">ADVERTISING CAMPAIGNS</p>
 
-    <div class="service-card">
-      <h2>عن الخدمة</h2>
-      <p>
-        نخطط وننفذ حملات إعلانية تستهدف جمهورك المناسب،
-        وتساعدك على زيادة الوصول وجذب عملاء محتملين،
-        من خلال أفكار إعلانية تتناسب مع أهداف مشروعك.
+      <h1>
+        إعلانك مش مجرد ظهور<br>
+        <span class="green">لازم يحقق هدف</span>
+      </h1>
+
+      <p class="intro">
+        نجاح الإعلان مش بعدد الناس اللي شافته بس؛
+        النجاح إنك توصل للجمهور المناسب برسالة واضحة،
+        وتخليه يفهم قيمة اللي بتقدمه.
+        في PROFIT بنساعدك تخطط لحملات إعلانية مرتبطة بهدف مشروعك
+        وميزانيتك والجمهور اللي عايز توصله.
       </p>
-    </div>
+    </section>
 
-    <div class="actions">
-      <a class="btn primary" href="index.html#contact">
-        تواصل مع PROFIT
-      </a>
+    <section class="section">
+      <h2 class="section-title">
+        بنساعدك في <span class="green">إيه؟</span>
+      </h2>
 
-      <a class="btn" href="index.html#services">
-        العودة للخدمات
-      </a>
-    </div>
+      <div class="grid">
+
+        <article class="card">
+          <div class="icon">🎯</div>
+          <h3>تحديد الجمهور المستهدف</h3>
+          <p>
+            نفهم مين العميل المناسب لنشاطك،
+            وإيه اهتماماته واحتياجاته اللي تهم الحملة.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="icon">💡</div>
+          <h3>الفكرة والرسالة الإعلانية</h3>
+          <p>
+            نحدد الفكرة اللي هتجذب الانتباه،
+            والرسالة اللي توضح قيمة منتجك أو خدمتك.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="icon">📱</div>
+          <h3>اختيار المنصة المناسبة</h3>
+          <p>
+            نحدد المنصات الإعلانية المناسبة لطبيعة الجمهور
+            والهدف والميزانية المتاحة.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="icon">🖼️</div>
+          <h3>تجهيز المواد الإعلانية</h3>
+          <p>
+            إعداد أفكار ونصوص وإبداعات إعلانية
+            مناسبة للمنصة وطبيعة الحملة.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="icon">📊</div>
+          <h3>متابعة الأداء</h3>
+          <p>
+            مراجعة النتائج المتاحة لمعرفة مدى تحقيق الأهداف
+            وتحديد فرص التحسين.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="icon">📈</div>
+          <h3>تحسين الحملة</h3>
+          <p>
+            الاستفادة من بيانات الأداء لتطوير الرسائل
+            والاستهداف وتوزيع الميزانية حسب الحاجة.
+          </p>
+        </article>
+
+      </div>
+
+      <div class="highlight">
+        <h3>مش كل حملة هدفها البيع المباشر</h3>
+        <p>
+          ممكن يكون هدف الحملة إن الناس تعرف البراند،
+          أو تتواصل معاك، أو تطلب عرض سعر، أو تشتري.
+          علشان كده بنحدد الهدف من البداية،
+          لأن الهدف هو اللي بيوجه قرارات الحملة.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">
+        بنبني الحملة <span class="green">إزاي؟</span>
+      </h2>
+
+      <div class="steps">
+
+        <div class="step">
+          <strong>01 — فهم المشروع</strong>
+          <p>نتعرف على نشاطك وهدفك والجمهور المستهدف.</p>
+        </div>
+
+        <div class="step">
+          <strong>02 — التخطيط</strong>
+          <p>نحدد الرسالة والمنصات والميزانية المناسبة.</p>
+        </div>
+
+        <div class="step">
+          <strong>03 — التنفيذ</strong>
+          <p>نجهز المواد الإعلانية وننفذ المتفق عليه.</p>
+        </div>
+
+        <div class="step">
+          <strong>04 — تقييم النتائج</strong>
+          <p>نراجع الأداء ونحدد الخطوات التالية.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="cta">
+      <h2>عندك مشروع وعايز تعلن عنه؟</h2>
+      <p>
+        احكيلنا عن نشاطك وهدفك الإعلاني،
+        ونناقش معاك أنسب طريقة للبدء.
+      </p>
+
+      <div class="buttons">
+        <a class="btn primary" href="index.html#contact">
+          تواصل معانا
+        </a>
+
+        <a class="btn secondary" href="index.html#services">
+          استكشف باقي الخدمات
+        </a>
+      </div>
+    </section>
+
   </main>
 
   <footer>
-    © 2026 PROFIT — Advertising &amp; Marketing
+    PROFIT AGENCY — ADVERTISING &amp; MARKETING
   </footer>
+
 </body>
 </html>
-
