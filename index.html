@@ -540,47 +540,49 @@ footer {
 
     
 
+
 /* حركة كروت الخدمات */
-.services-grid .service-card {
-  opacity: 1;
-  transform: none;
-  transition: none;
-}
-/* الحالة الطبيعية */
 .services-grid .service-card {
   opacity: 1;
   transform: translateX(0);
 }
-    
 
 /* بداية الحركة */
 .services-grid.motion-ready .service-card {
   opacity: 0;
-  transform: translateX(100vw);
   transition:
-    transform 0.45s ease-out,
-    opacity 0.35s ease-out;
+    transform 0.4s ease-out,
+    opacity 0.3s ease-out;
+  will-change: transform, opacity;
 }
 
-/* الكروت القادمة من الشمال */
-.services-grid.motion-ready .service-card:nth-child(even) {
+/* الكروت الموجودة على اليمين */
+.services-grid.motion-ready .service-card.from-right {
+  transform: translateX(100vw);
+}
+
+/* الكروت الموجودة على الشمال */
+.services-grid.motion-ready .service-card.from-left {
   transform: translateX(-100vw);
 }
 
-/* الوصول لمكان الكارت */
+/* وصول الكارت لمكانه */
 .services-grid.motion-ready .service-card.is-visible {
   opacity: 1;
   transform: translateX(0);
 }
 
-/* الموبايل */
-@media (max-width: 600px) {
-  .services-grid.motion-ready .service-card {
-    transform: translateX(100vw);
-  }
+/* الحفاظ على تأثير المرور بالماوس */
+.services-grid .service-card.is-visible:hover {
+  transform: translateY(-5px);
+}
 
-  .services-grid.motion-ready .service-card:nth-child(even) {
-    transform: translateX(-100vw);
+/* احترام إعداد تقليل الحركة */
+@media (prefers-reduced-motion: reduce) {
+  .services-grid.motion-ready .service-card {
+    transition: none;
+    transform: none;
+    opacity: 1;
   }
 }
 
@@ -743,35 +745,60 @@ document.addEventListener("DOMContentLoaded", function () {
   const grid = document.querySelector(".services-grid");
   if (!grid) return;
 
-  const cards = grid.querySelectorAll(".service-card");
+  const cards = Array.from(
+    grid.querySelectorAll(".service-card")
+  );
+
   if (!("IntersectionObserver" in window)) return;
 
-  const observer = new IntersectionObserver(function (entries) {
-    entries.forEach(function (entry) {
-      if (!entry.isIntersecting) return;
+  /* تحديد اتجاه الحركة حسب مكان كل كارت على الشاشة */
+  function setCardDirections() {
+    const gridRect = grid.getBoundingClientRect();
+    const middle = (gridRect.left + gridRect.right) / 2;
 
-      const card = entry.target;
-      const index = Array.from(cards).indexOf(card);
+    cards.forEach(function (card) {
+      const rect = card.getBoundingClientRect();
+      const cardMiddle = rect.left + rect.width / 2;
 
-      setTimeout(function () {
-        card.classList.add("is-visible");
-      }, (index % 4) * 70);
+      card.classList.remove("from-right", "from-left");
 
-      observer.unobserve(card);
+      card.classList.add(
+        cardMiddle >= middle ? "from-right" : "from-left"
+      );
     });
-  }, {
-    threshold: 0.05
-  });
+  }
 
+  setCardDirections();
   grid.classList.add("motion-ready");
+
+  const observer = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+
+        const card = entry.target;
+        const index = cards.indexOf(card);
+        const columns = window.matchMedia(
+          "(max-width: 900px)"
+        ).matches ? 2 : 4;
+
+        card.style.transitionDelay =
+          (index % columns) * 45 + "ms";
+
+        card.classList.add("is-visible");
+        observer.unobserve(card);
+      });
+    },
+    {
+      threshold: 0.05
+    }
+  );
 
   cards.forEach(function (card) {
     observer.observe(card);
   });
 });
 </script>
-</body>
-</html>
 
   </body>
 </html>
