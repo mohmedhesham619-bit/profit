@@ -232,6 +232,73 @@ footer {
   }
 }
     
+.hero-brand-message {
+  width: 100%;
+  max-width: 850px;
+  margin: 35px auto 0;
+  padding: 0 20px;
+  box-sizing: border-box;
+  text-align: center;
+  direction: rtl;
+}
+
+.hero-brand-label {
+  color: #24D17E;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin-bottom: 18px;
+  direction: ltr;
+}
+
+.hero-brand-message h1 {
+  color: #FFFFFF;
+  font-size: clamp(25px, 3.5vw, 38px);
+  font-weight: 800;
+  line-height: 1.6;
+  margin: 0 auto 12px;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
+}
+
+.hero-brand-message p {
+  color: #E0E5E2;
+  font-size: clamp(14px, 1.5vw, 17px);
+  line-height: 1.9;
+  margin: 0 auto;
+  max-width: 650px;
+}
+
+.hero-brand-line {
+  width: 75px;
+  height: 3px;
+  background: #24D17E;
+  border-radius: 10px;
+  margin: 24px auto 0;
+}
+
+@media (max-width: 600px) {
+  .hero-brand-message {
+    margin-top: 28px;
+    padding: 0 18px;
+  }
+
+  .hero-brand-label {
+    font-size: 10px;
+    letter-spacing: 1.3px;
+    margin-bottom: 12px;
+  }
+
+  .hero-brand-message h1 {
+    font-size: 25px;
+    line-height: 1.7;
+  }
+
+  .hero-brand-message p {
+    font-size: 14px;
+  }
+}
+    
+    
   </style>
 </head>
 <body>
@@ -250,9 +317,19 @@ footer {
       </div>
     </div>
 
-    <h1 class="hero-headline">
-      صناعة حملات إعلانية وتسويقية تساعد مشروعك يظهر بشكل احترافي
-    </h1>
+    
+<div class="hero-brand-message">
+  <div class="hero-brand-label">
+    STRATEGY • CREATIVITY • GROWTH
+  </div>
+
+  <h1>نحوّل أفكارك إلى حضور أقوى</h1>
+
+  <p>حلول إعلانية وتسويقية مصممة لتناسب أهداف مشروعك.</p>
+
+  <div class="hero-brand-line"></div>
+</div>
+
   </div>
 </section>
 
