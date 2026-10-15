@@ -1,1 +1,348 @@
 
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Content Creation | PROFIT Agency</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #080b0a;
+      color: #fff;
+      line-height: 1.8;
+    }
+
+    .container {
+      width: min(1100px, 92%);
+      margin: auto;
+    }
+
+    header {
+      padding: 24px 0;
+      border-bottom: 1px solid #202923;
+    }
+
+    .brand {
+      direction: ltr;
+      text-align: center;
+      font-size: 30px;
+      font-weight: 900;
+      letter-spacing: 5px;
+    }
+
+    .brand span,
+    .green {
+      color: #24d17e;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 75px 0 50px;
+    }
+
+    .eyebrow {
+      color: #24d17e;
+      letter-spacing: 3px;
+      font-size: 13px;
+      direction: ltr;
+    }
+
+    h1 {
+      font-size: clamp(34px, 6vw, 58px);
+      line-height: 1.35;
+      margin: 15px 0;
+    }
+
+    .intro {
+      max-width: 720px;
+      margin: auto;
+      color: #c1c9c4;
+      font-size: 17px;
+    }
+
+    .section {
+      padding: 30px 0;
+    }
+
+    .section-title {
+      font-size: 27px;
+      margin-bottom: 22px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background: #101613;
+      border: 1px solid #26342b;
+      border-radius: 16px;
+      padding: 25px;
+      transition: .25s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: #24d17e;
+    }
+
+    .icon {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .card h3 {
+      font-size: 19px;
+      margin-bottom: 8px;
+    }
+
+    .card p {
+      color: #aeb8b1;
+      font-size: 15px;
+    }
+
+    .highlight {
+      margin-top: 25px;
+      padding: 28px;
+      border-right: 3px solid #24d17e;
+      background: #101613;
+      border-radius: 12px;
+    }
+
+    .highlight p {
+      color: #c1c9c4;
+      margin-top: 8px;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .step {
+      padding: 16px;
+      border-top: 1px solid #24d17e;
+      background: #0d120f;
+      border-radius: 10px;
+    }
+
+    .step strong {
+      display: block;
+      color: #24d17e;
+      margin-bottom: 8px;
+    }
+
+    .cta {
+      text-align: center;
+      margin: 50px 0 65px;
+      padding: 40px 22px;
+      border: 1px solid #263b2e;
+      border-radius: 20px;
+      background: linear-gradient(135deg, #101813, #0a0d0b);
+    }
+
+    .cta h2 {
+      font-size: 27px;
+      margin-bottom: 10px;
+    }
+
+    .cta p {
+      color: #b8c1bb;
+      margin-bottom: 22px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      border-radius: 9px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .primary {
+      background: #24d17e;
+      color: #07110b;
+    }
+
+    .secondary {
+      border: 1px solid #536258;
+      color: #fff;
+    }
+
+    footer {
+      border-top: 1px solid #202923;
+      text-align: center;
+      padding: 22px;
+      color: #859188;
+      font-size: 13px;
+    }
+
+    @media (max-width: 750px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .steps {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero {
+        padding-top: 50px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .steps {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container brand">
+      PROFIT<span>.</span>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="hero">
+      <p class="eyebrow">CONTENT CREATION</p>
+
+      <h1>
+        محتوى يلفت الانتباه<br>
+        <span class="green">ويوصل رسالتك</span>
+      </h1>
+
+      <p class="intro">
+        مش كل محتوى بيتنشر بيحقق نتيجة.
+        المحتوى الناجح هو اللي يخاطب الجمهور الصح،
+        ويقدم له فكرة واضحة تخليه يفهم قيمة مشروعك ويتفاعل معاه.
+        في PROFIT بنساعدك تحوّل أفكارك لرسائل محتوى مناسبة لنشاطك.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">
+        بنقدّم محتوى يخدم <span class="green">هدفك</span>
+      </h2>
+
+      <div class="grid">
+
+        <article class="card">
+          <div class="icon">✍️</div>
+          <h3>كتابة المحتوى</h3>
+          <p>
+            صياغة أفكار ورسائل واضحة تناسب جمهورك،
+            وتعرض قيمة خدمتك أو منتجك بطريقة جذابة.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="icon">🎬</div>
+          <h3>أفكار الفيديوهات</h3>
+          <p>
+            أفكار وسيناريوهات للفيديوهات القصيرة،
+            تساعدك تعرض نشاطك وتوصل رسالتك بشكل بسيط.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="icon">📱</div>
+          <h3>محتوى السوشيال ميديا</h3>
+          <p>
+            محتوى مناسب لطبيعة المنصة والجمهور،
+            سواء كان هدفك التوعية أو التفاعل أو جذب العملاء.
+          </p>
+        </article>
+
+      </div>
+
+      <div class="highlight">
+        <h3>المحتوى مش مجرد كلام حلو</h3>
+        <p>
+          كل قطعة محتوى لازم يكون ليها هدف:
+          تعرّف الناس بمشروعك، توضح ميزة عندك،
+          تجاوب عن سؤال عند العميل، أو تشجعه ياخد خطوة.
+          علشان كده بنبدأ بفهم النشاط والجمهور قبل اختيار الفكرة.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">
+        من الفكرة إلى <span class="green">المحتوى</span>
+      </h2>
+
+      <div class="steps">
+
+        <div class="step">
+          <strong>01 — فهم النشاط</strong>
+          <p>نعرف طبيعة مشروعك والجمهور اللي بتخاطبه.</p>
+        </div>
+
+        <div class="step">
+          <strong>02 — تحديد الهدف</strong>
+          <p>نحدد الرسالة المطلوبة من المحتوى.</p>
+        </div>
+
+        <div class="step">
+          <strong>03 — تطوير الفكرة</strong>
+          <p>نختار الفكرة والصياغة المناسبة للمنصة.</p>
+        </div>
+
+        <div class="step">
+          <strong>04 — التجهيز</strong>
+          <p>نجهّز المحتوى وفق التفاصيل المتفق عليها.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="cta">
+      <h2>عندك فكرة وعايز تحوّلها لمحتوى؟</h2>
+      <p>
+        احكيلنا عن مشروعك وهدفك، ونناقش نوع المحتوى المناسب ليك.
+      </p>
+
+      <div class="buttons">
+        <a class="btn primary" href="index.html#contact">
+          تواصل معانا
+        </a>
+
+        <a class="btn secondary" href="index.html#services">
+          استكشف باقي الخدمات
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    PROFIT AGENCY — ADVERTISING &amp; MARKETING
+  </footer>
+
+</body>
+</html>
