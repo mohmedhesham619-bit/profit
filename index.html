@@ -135,6 +135,103 @@ footer {
       .hero { padding: 70px 6%; }
       section { padding: 50px 6%; }
     }
+
+    
+/* PROFIT HERO CARD */
+.hero-cover {
+  min-height: 100vh;
+  min-height: 100svh;
+  width: 100%;
+  padding: 24px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background: transparent !important;
+}
+
+.hero-cover .profit-card {
+  position: relative;
+  isolation: isolate;
+  width: min(94%, 650px);
+  min-height: 250px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(36, 209, 126, .95);
+  border-radius: 26px;
+  background: rgba(0, 12, 9, .4);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  box-shadow:
+    0 0 25px rgba(36, 209, 126, .5),
+    0 0 75px rgba(36, 209, 126, .25),
+    inset 0 0 30px rgba(36, 209, 126, .12);
+  transform: rotate(-6deg);
+}
+
+.hero-cover .profit-card::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: -35px;
+  border-radius: 50%;
+  background:
+    radial-gradient(ellipse at 50% 20%,
+      rgba(36, 209, 126, .38), transparent 60%);
+  filter: blur(28px);
+  animation: profitGlow 4s ease-in-out infinite alternate;
+}
+
+.hero-cover .card-content {
+  text-align: center;
+  padding: 20px 5px;
+  transform: rotate(6deg);
+}
+
+.hero-cover .profit-logo {
+  color: white;
+  font-size: clamp(48px, 9vw, 90px);
+  font-weight: 900;
+  letter-spacing: 2px;
+  line-height: 1.2;
+}
+
+.hero-cover .profit-logo span {
+  color: #24d17e;
+}
+
+.hero-cover .profit-subtitle {
+  color: white;
+  font-size: clamp(10px, 2vw, 16px);
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-top: 12px;
+}
+
+@keyframes profitGlow {
+  from { opacity: .5; transform: scale(.9); }
+  to { opacity: 1; transform: scale(1.08); }
+}
+
+@media (max-width: 600px) {
+  .hero-cover {
+    padding: 18px;
+  }
+
+  .hero-cover .profit-card {
+    width: 96%;
+    min-height: 200px;
+  }
+
+  .hero-cover .profit-subtitle {
+    letter-spacing: 1px;
+  }
+}
+    
   </style>
 </head>
 <body>
