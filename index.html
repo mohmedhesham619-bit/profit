@@ -15,14 +15,33 @@
       color: #fff;
       line-height: 1.8;
     }
-    header {
-      padding: 22px 7%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid #252a30;
-    }
-    .logo { font-size: 28px; font-weight: 900; }
+    
+.brand-header {
+  text-align: center;
+  padding: 35px 15px 20px;
+  border: none;
+  background: transparent;
+}
+
+.logo {
+  font-size: clamp(42px, 8vw, 68px);
+  font-weight: 900;
+  letter-spacing: 3px;
+  line-height: 1.2;
+}
+
+.logo span {
+  color: #24d17e;
+}
+
+.brand-subtitle {
+  color: #ffffff;
+  font-size: clamp(12px, 2.5vw, 17px);
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin-top: 10px;
+}
+
     .logo span, .green { color: #24d17e; }
     nav a {
       color: #ddd;
@@ -99,14 +118,12 @@
 </head>
 <body>
 
-<header>
+
+<header class="brand-header">
   <div class="logo">PRO<span>FIT</span></div>
-  <nav>
-    <a href="#services">خدماتنا</a>
-    <a href="#about">عن الشركة</a>
-    <a href="#contact">تواصل معنا</a>
-  </nav>
+  <div class="brand-subtitle">ADVERTISING & MARKETING</div>
 </header>
+
 
 <main>
   <div class="hero">
