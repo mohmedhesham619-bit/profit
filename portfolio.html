@@ -4,106 +4,324 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>سابقة أعمالنا | PROFiT</title>
+
+  <title>سابقة أعمالنا | PROFiT للدعاية والإعلان</title>
+  <meta name="description" content="شاهد سابقة أعمال PROFiT في تصميم الإعلانات والمونتاج وصناعة المحتوى التسويقي.">
+
+  <meta name="theme-color" content="#080b09">
 
   <style>
     * {
+      margin: 0;
+      padding: 0;
       box-sizing: border-box;
     }
 
+    :root {
+      --green: #42c875;
+      --black: #080b09;
+      --card: #141915;
+      --white: #ffffff;
+      --gray: #b8c0ba;
+    }
+
     body {
-      margin: 0;
-      background: #080b09;
-      color: #fff;
+      background: var(--black);
+      color: var(--white);
       font-family: Arial, sans-serif;
+      line-height: 1.7;
+      min-height: 100vh;
     }
 
-    header {
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .navbar {
+      width: 100%;
+      padding: 18px 7%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      flex-wrap: wrap;
+      border-bottom: 1px solid #263129;
+      background: #0c100d;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      color: var(--white);
+    }
+
+    .logo span {
+      color: var(--green);
+    }
+
+    .back-home {
+      color: var(--green);
+      border: 1px solid var(--green);
+      padding: 8px 17px;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+
+    .back-home:hover {
+      background: var(--green);
+      color: var(--black);
+    }
+
+    .hero {
       text-align: center;
-      padding: 45px 20px 25px;
+      padding: 65px 20px 35px;
     }
 
-    header h1 {
-      color: #42c875;
-      font-size: 32px;
+    .hero .tag {
+      color: var(--green);
+      font-size: 13px;
+      letter-spacing: 3px;
+      font-weight: bold;
     }
 
-    header p {
-      color: #ccc;
-      line-height: 1.8;
+    .hero h1 {
+      font-size: clamp(30px, 5vw, 48px);
+      margin: 12px 0;
+      color: var(--white);
     }
 
-    .videos {
-      display: grid;
-      grid-template-columns: repeat(
-        auto-fit, minmax(min(100%, 260px), 1fr)
-      );
-      gap: 22px;
-      max-width: 1100px;
+    .hero h1 span {
+      color: var(--green);
+      text-shadow: 0 0 20px #42c87535;
+    }
+
+    .hero p {
+      max-width: 600px;
       margin: auto;
-      padding: 20px;
+      color: var(--gray);
+      font-size: 16px;
+    }
+
+    .portfolio {
+      max-width: 1150px;
+      margin: 0 auto;
+      padding: 25px 22px 70px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 25px;
     }
 
     .video-card {
-      background: #151a17;
-      border: 1px solid #29352d;
-      padding: 12px;
-      border-radius: 14px;
+      min-width: 0;
+      overflow: hidden;
+      background: var(--card);
+      border: 1px solid #29372d;
+      border-radius: 15px;
+      padding: 13px;
+      transition: transform 0.3s, border-color 0.3s;
     }
 
-    .video-card video {
+    .video-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--green);
+    }
+
+    .video-frame {
       width: 100%;
-      display: block;
+      background: #000;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .video-frame video {
+      width: 100%;
+      max-height: 620px;
       aspect-ratio: 9 / 16;
       object-fit: contain;
+      display: block;
       background: #000;
-      border-radius: 9px;
     }
 
-    .video-card h3 {
-      color: #42c875;
-      margin-bottom: 8px;
+    .video-info {
+      padding: 15px 5px 7px;
     }
 
-    .video-card p {
-      color: #ccc;
+    .video-info h2 {
+      font-size: 19px;
+      color: var(--green);
+      margin-bottom: 5px;
+    }
+
+    .video-info p {
+      color: var(--gray);
       font-size: 14px;
     }
 
-    .back {
+    .contact {
+      text-align: center;
+      padding: 35px 20px 55px;
+      background: #101511;
+      border-top: 1px solid #263129;
+    }
+
+    .contact h2 {
+      font-size: 25px;
+      margin-bottom: 8px;
+    }
+
+    .contact p {
+      color: var(--gray);
+      margin-bottom: 20px;
+    }
+
+    .contact-btn {
       display: inline-block;
-      margin-top: 15px;
-      color: #42c875;
-      text-decoration: none;
+      background: var(--green);
+      color: #071009;
+      padding: 12px 25px;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .contact-btn:hover {
+      background: #ffffff;
+      transform: translateY(-2px);
+    }
+
+    footer {
+      padding: 20px;
+      text-align: center;
+      color: #929b94;
+      font-size: 13px;
+      background: #080b09;
+    }
+
+    footer span {
+      color: var(--green);
+    }
+
+    @media (max-width: 650px) {
+      .navbar {
+        padding: 15px 5%;
+      }
+
+      .logo {
+        font-size: 22px;
+      }
+
+      .hero {
+        padding: 45px 18px 25px;
+      }
+
+      .portfolio {
+        grid-template-columns: 1fr;
+        padding: 20px 16px 45px;
+        gap: 20px;
+      }
+
+      .video-card {
+        max-width: 430px;
+        width: 100%;
+        margin: 0 auto;
+      }
+
+      .video-frame video {
+        max-height: 600px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        transition: none !important;
+        scroll-behavior: auto !important;
+      }
     }
   </style>
 </head>
 
 <body>
-  <header>
-    <h1>سابقة أعمال PROFiT</h1>
-    <p>شاهد نماذج من أعمالنا في الدعاية والإعلان وصناعة المحتوى.</p>
-    <a class="back" href="index.html">العودة للرئيسية</a>
+
+  <nav class="navbar">
+    <a class="logo" href="index.html">
+      PRO<span>FiT</span>
+    </a>
+
+    <a class="back-home" href="index.html">
+      العودة للرئيسية ←
+    </a>
+  </nav>
+
+  <header class="hero">
+    <p class="tag">OUR PORTFOLIO</p>
+
+    <h1>سابقة أعمال <span>PROFiT</span></h1>
+
+    <p>
+      بنحوّل الأفكار لمحتوى إعلاني إبداعي يساعد علامتك التجارية
+      تظهر بصورة احترافية.
+    </p>
   </header>
 
-  <main class="videos">
+  <main class="portfolio">
 
+    <!-- الفيديو الأول -->
     <article class="video-card">
-      <video controls playsinline preload="metadata">
-        <source src="videos/ad-01.mp4" type="video/mp4">
-      </video>
-      <h3>إعلان إبداعي</h3>
-      <p>من أعمال PROFiT</p>
+      <div class="video-frame">
+        <video controls playsinline preload="metadata">
+          <source
+            src="lv_7614266951157763345_20261018145022.mp4"
+            type="video/mp4">
+          متصفحك لا يدعم تشغيل الفيديو.
+        </video>
+      </div>
+
+      <div class="video-info">
+        <h2>عمل إعلاني رقم 01</h2>
+        <p>شاهد الفيديو وتعرّف على أسلوب تنفيذ أعمال PROFiT.</p>
+      </div>
     </article>
 
+    <!-- الفيديو الثاني -->
     <article class="video-card">
-      <video controls playsinline preload="metadata">
-        <source src="videos/ad-02.mp4" type="video/mp4">
-      </video>
-      <h3>مونتاج فيديو</h3>
-      <p>من أعمال PROFiT</p>
+      <div class="video-frame">
+        <video controls playsinline preload="metadata">
+          <source
+            src="lv_0_20261018161323.mp4"
+            type="video/mp4">
+          متصفحك لا يدعم تشغيل الفيديو.
+        </video>
+      </div>
+
+      <div class="video-info">
+        <h2>عمل إعلاني رقم 02</h2>
+        <p>أحد نماذج الفيديوهات من أعمال PROFiT.</p>
+      </div>
     </article>
 
   </main>
+
+  <section class="contact">
+    <h2>عندك مشروع وعايز تطوره؟</h2>
+
+    <p>
+      خلّي PROFiT تساعدك في تقديم مشروعك بصورة احترافية.
+    </p>
+
+    <a
+      class="contact-btn"
+      href="https://wa.me/201149772587"
+      target="_blank"
+      rel="noopener noreferrer">
+      تواصل معنا عبر واتساب
+    </a>
+  </section>
+
+  <footer>
+    © <span>PROFiT</span> للدعاية والإعلان — جميع الحقوق محفوظة
+  </footer>
+
 </body>
 </html>
