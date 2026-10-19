@@ -1022,6 +1022,63 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
     </style>
+
+  
+<!-- PROFiT Portfolio Floating Button -->
+<a href="portfolio.html"
+   class="portfolio-float"
+   aria-label="سابقة أعمال PROFiT"
+   title="سابقة أعمالنا">
+
+  <svg xmlns="http://www.w3.org/2000/svg"
+       viewBox="0 0 24 24"
+       width="28"
+       height="28"
+       fill="none"
+       stroke="currentColor"
+       stroke-width="1.8"
+       stroke-linecap="round"
+       stroke-linejoin="round">
+    <rect x="3" y="3" width="18" height="18" rx="3"/>
+    <circle cx="8.5" cy="8.5" r="1.5"/>
+    <path d="M21 15l-5-5L5 21"/>
+  </svg>
+
+</a>
+
+<style>
+.portfolio-float {
+  position: fixed;
+  right: 5px;
+  bottom: 134px;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #101410;
+  color: #24d17e;
+  border: 1.5px solid #24d17e;
+  border-radius: 14px;
+  box-shadow: 0 0 14px rgba(36, 209, 126, .3);
+  text-decoration: none;
+  z-index: 9998;
+  transition: transform .25s ease, background .25s ease;
+}
+
+.portfolio-float:hover {
+  transform: scale(1.08);
+  background: #24d17e;
+  color: #101410;
+}
+
+@media (min-width: 601px) {
+  .portfolio-float {
+    right: 5px;
+    bottom: 134px;
+  }
+}
+</style>
   
   </body>
 </html>
